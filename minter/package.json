@@ -1,0 +1,40 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "files": [
+    "build/src"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "start:build": "tsc -w --resolveJsonModule",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/mime": "^3.0.0",
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@types/uuid": "^8.3.4",
+    "dotenv": "^16.0.1",
+    "ethers": "^5.6.9",
+    "files-from-path": "^0.2.6",
+    "mime": "^3.0.0",
+    "nft.storage": "^7.0.0",
+    "uuid": "^8.3.2"
+  }
+}
